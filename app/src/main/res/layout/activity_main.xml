@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_overlay_flipped"
+        tools:context=".MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ed_bg"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageButton
+                    android:id="@+id/refresh"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_bg"
+                    android:fontFamily="@font/sarpanch"
+                    android:src="@drawable/ic_baseline_refresh_24"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/desktop_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:textColor="#fff"
+                    android:layout_marginEnd="10dp"
+                    android:text="Firebase Console\n[Unofficial]"
+                    android:fontFamily="@font/coda"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <im.delight.android.webview.AdvancedWebView
+                android:id="@+id/webview"
+                android:layout_below="@id/top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/errorlayout"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:text="Internet Is Not Available\nConnect a Wifi Network Or Turn ON Mobile Data"/>
+                <Button
+                    android:layout_width="100dp"
+                    android:id="@+id/refreshbtn"
+                    android:layout_height="wrap_content"
+                    android:text="REFRESH"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>
